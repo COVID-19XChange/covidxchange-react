@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import firebase from 'firebase'
+import app from '../../firebase'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { routes } from '../../Router'
+import { routes } from '../../routes/Router'
 
 export default function SignIn() {
     const [ loginData, setLoginData ] = useState({ email: '', password: '' });
@@ -19,7 +19,7 @@ export default function SignIn() {
         const { email, password } = loginData;
 
         try {
-            await firebase.auth().signInWithEmailAndPassword(email, password )
+            await app.auth().signInWithEmailAndPassword(email, password )
         } catch(exception) {
             switch(exception.code){
                 default:

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import firebase from 'firebase';
+import app from '../../firebase'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import { Link, useHistory } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
-import { routes } from '../../Router'
+import { routes } from '../../routes/Router'
 import PageNameGridItem from './PageNameGridItem';
 
 export default function SignUp() {
@@ -26,7 +26,7 @@ export default function SignUp() {
         const { email, password } = form;
 
         try{
-            await firebase.auth().createUserWithEmailAndPassword(email, password)
+            await app.auth().createUserWithEmailAndPassword(email, password)
             history.push(routes.signIn)
         } catch (exception) {
             switch(exception.code){
