@@ -7,23 +7,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-          {'Copyright © '}
-          <Link color="inherit" href="https://material-ui.com/">
-              Your Website
-          </Link>{' '}
-          {new Date().getFullYear()}
-          {'.'}
-      </Typography>
-    );
-}
 
 export default function SignUp() {
 
@@ -97,7 +83,6 @@ export default function SignUp() {
                     fullWidth
                     variant="contained"
                     color="primary"
-                    className={classes.submit}
                   >
                       Sign Up
                   </Button>
@@ -110,9 +95,6 @@ export default function SignUp() {
                   </Grid>
               </form>
           </div>
-          <Box mt={5}>
-              <Copyright />
-          </Box>
       </Container>
     );
 }
