@@ -3,15 +3,14 @@ import {
     BrowserRouter,
     Switch,
     Route,
-    Link,
 } from 'react-router-dom'
 import Home from './pages/Home';
-import Login from './pages/Login'
+import Login from './pages/SignIn'
 import SignUp from './pages/SignUp'
 
-const routes = {
+export const routes = {
     home: '/',
-    login: '/login',
+    signIn: '/signIn',
     signUp: '/signUp',
 }
 
@@ -20,7 +19,7 @@ export const Router = () => {
       <BrowserRouter>
           <Switch>
               <Route exact path={routes.home} component={Home} />
-              <Route exact path={routes.login} component={Login} />
+              <Route exact path={routes.signIn} component={Login} />
               <Route exact path={routes.signUp} component={SignUp} />
           </Switch>
       </BrowserRouter>

@@ -1,11 +1,15 @@
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { StylesProvider } from '@material-ui/core/styles';
+
 import React from 'react';
 
 import Router from './Router'
 
 const App = () => (
-    <div>
+    <StylesProvider injectFirst>
+        <CssBaseline />
         <Router/>
-    </div>
+    </StylesProvider>
 )
 
 export default App;
